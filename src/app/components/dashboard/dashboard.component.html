@@ -1,0 +1,14 @@
+<p>dashboard works!</p>
+
+<div *ngIf="state.isAuthenticated; else notUser;">
+  <p>You logged in <em>{{ state.user.email }}</em></p>
+  <button class="btn btn-primary" (click)="logout()">Log out</button>
+</div>
+
+<ng-template #notUser>
+  <button routerLink='/sign-in'>Sign in</button>
+  <button routerLink='/sign-up'>Sign up</button>
+</ng-template>
+
+
+<app-status [state]="state"></app-status>
